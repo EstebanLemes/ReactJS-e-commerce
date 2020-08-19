@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navbar(){
+function Navbar({algo}){
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,12 +19,10 @@ function Navbar(){
                             Categorias
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Antióxidos y fondos anticorrosivos</a>
-                            <a className="dropdown-item" href="#">Revestimientos y esmaltes de terminación</a>
-                            <a className="dropdown-item" href="#">Barnices</a>
-                            <a className="dropdown-item" href="#">Esmaltes aluminio y alta temperatura</a>
-                            <a className="dropdown-item" href="#">Pinturas y esmaltes base agua</a>
-                            <a className="dropdown-item" href="#">Diluyentes y Aditivos</a>
+                            <a className="dropdown-item" href="#">CPU Escritorio</a>
+                            <a className="dropdown-item" href="#">CPU Gamer</a>
+                            <a className="dropdown-item" href="#">Notebooks</a>
+                            <a className="dropdown-item" href="#">Componentes</a>
                         </div>
                     </li>
                     </ul>
