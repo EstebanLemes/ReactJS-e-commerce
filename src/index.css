@@ -5,9 +5,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.icon {
+  width: 50px;
+}
+
+.cart {
+  margin-left: 15px;
+}
+
+.card > a{
+  text-decoration: none;
+  color: black;
+}
+
+.card > a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.regular-h{
+  height: 250px;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  box-shadow: inset 5px 5px 5px 5px rgba(0,0,0,1);    
 }
