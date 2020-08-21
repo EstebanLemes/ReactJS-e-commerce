@@ -1,15 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from './components/NavBar';
-import Slider from './components/Slider';
-import ItemCard from './components/ItemCard';
+import Home from './components/Home';
 
 
 function App() {
+
+  const [cart, setCart] = useState(0);
+
   return (
     <div className="container">
-      <Navbar name="algo"/>
-      <Slider />
-      <ItemCard />
+      <Navbar cart={cart}/>
+      <Home 
+        cart={cart}
+        setCart={setCart}
+        greeting="Estoy probando las props"
+      />
     </div>
   );
 }

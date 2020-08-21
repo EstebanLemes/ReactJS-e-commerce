@@ -1,9 +1,11 @@
 import React from 'react';
 
-function LogoIcon(){
+const LogoIcon = (props) => {
+
     return(
-        <a className="cart" href="#" >
+        <a className="cart" href="" >
             <i className="fas fa-shopping-cart text-white"/>
+            <span className="badge">{props.cart}</span>
         </a>
     );
 }
