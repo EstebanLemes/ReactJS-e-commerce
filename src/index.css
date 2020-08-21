@@ -41,3 +41,21 @@ code {
   height: 48px;
   box-shadow: inset 5px 5px 5px 5px rgba(0,0,0,1);    
 }
+
+.hidden{
+  display: none;
+}
+
+.cart-in-item{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  border: solid 1px black;
+  background-color: rgb(213, 255, 213);
+  border-radius: 5px 0 5px 5px;
+}
+
+.cart-in-item:hover{
+  background-color: lime;
+}
