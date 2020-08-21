@@ -21,6 +21,11 @@ code {
   margin-left: 15px;
 }
 
+.card{
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
 .card > a{
   text-decoration: none;
   color: black;

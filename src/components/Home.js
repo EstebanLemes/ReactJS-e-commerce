@@ -2,6 +2,7 @@ import React from 'react';
 
 import Slider from './Slider';
 import ItemCard from './ItemCard';
+import {Mother, Impresora, Notebook, PCGamer} from '../constants/products';
 
 const Home = (props) => {
 
@@ -9,10 +10,51 @@ const Home = (props) => {
         <div>
             <h1>{props.greeting}</h1>
             <Slider />
-            <ItemCard 
-                cart={props.cart}
-                setCart={props.setCart}
-            />
+            <div class="row">
+                <ItemCard 
+                    image={Mother}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={Impresora}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={Notebook}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={PCGamer}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+
+<ItemCard 
+                    image={Mother}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={Impresora}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={Notebook}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                <ItemCard
+                    image={PCGamer}
+                    cart={props.cart}
+                    setCart={props.setCart}
+                />
+                
+            </div>
+            
         </div>
     );
 }

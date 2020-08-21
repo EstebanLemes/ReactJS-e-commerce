@@ -1,8 +1,5 @@
 import React from 'react';
-import Notebook from '../assets/images/notebook.jpg';
-import PCGamer from '../assets/images/pcgamer.jpg';
-import Mother from '../assets/images/motherboard.jpg';
-import Impresora from '../assets/images/impresora.jpg';
+import {Mother, PCGamer, Impresora, Notebook} from '../constants/products';
 
 const Slider = () => {
     return(
