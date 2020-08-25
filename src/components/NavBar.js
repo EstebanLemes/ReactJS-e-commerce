@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import CartIcon from './CartIcon';
 import LogoIcon from './LogoIcon';
+import CartContext from '../contexts/cartContext';
 
-const Navbar = (props) => {
+
+
+const Navbar = () => {
+    
+    const {cart} = useContext(CartContext);
+
     return(
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -23,11 +29,11 @@ const Navbar = (props) => {
                             Categorias
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a className="dropdown-item" href="">Componentes</a>
                             <a className="dropdown-item" href="">CPU Escritorio</a>
                             <a className="dropdown-item" href="">CPU Gamer</a>
-                            <a className="dropdown-item" href="">Notebooks</a>
-                            <a className="dropdown-item" href="">Componentes</a>
                             <a className="dropdown-item" href="">Impresoras</a>
+                            <a className="dropdown-item" href="">Notebooks</a>
                         </div>
                     </li>
                     </ul>
@@ -35,7 +41,7 @@ const Navbar = (props) => {
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><i className="fas fa-search"/></button>
                     </form>
-                    <CartIcon cart={props.cart}/>
+                    <CartIcon cart={cart}/>
                 </div>
             </nav>
         </div>

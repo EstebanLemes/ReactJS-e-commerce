@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Navbar from './components/NavBar';
 import Home from './components/Home';
+import CartContext from './contexts/cartContext';
 
 
 function App() {
@@ -8,14 +9,15 @@ function App() {
   const [cart, setCart] = useState(0);
 
   return (
-    <div className="container">
-      <Navbar cart={cart}/>
-      <Home 
-        cart={cart}
-        setCart={setCart}
-        greeting="Estoy probando las props"
-      />
-    </div>
+    <CartContext.Provider value={{cart, setCart}}>
+      <div className="container">
+        <Navbar/>
+        <Home 
+          cart={cart}
+          setCart={setCart}
+        />
+      </div>
+    </CartContext.Provider>
   );
 }
 

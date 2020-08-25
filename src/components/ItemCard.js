@@ -1,6 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import CartContext from '../contexts/cartContext';
 
 const ItemCard = (props) => {
+
+    const {cart, setCart} = useContext(CartContext);
 
     const [hiddeDesc, setHiddeDesc] = useState('hidden');
 
@@ -15,7 +18,7 @@ const ItemCard = (props) => {
                     <div className={"card-body", hiddeDesc}>
                         <i 
                             onClick={(e) => {
-                                props.setCart(props.cart+1)
+                                setCart(cart+1)
                                 e.preventDefault();
                             }} 
                             className="cart-in-item fas fa-cart-plus"

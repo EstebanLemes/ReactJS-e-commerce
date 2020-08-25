@@ -8,49 +8,32 @@ const Home = (props) => {
 
     return(
         <div>
-            <h1>{props.greeting}</h1>
             <Slider />
             <div class="row">
                 <ItemCard 
                     image={Mother}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={Impresora}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={Notebook}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={PCGamer}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
 
-<ItemCard 
+                <ItemCard 
                     image={Mother}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={Impresora}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={Notebook}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 <ItemCard
                     image={PCGamer}
-                    cart={props.cart}
-                    setCart={props.setCart}
                 />
                 
             </div>
