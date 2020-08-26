@@ -12,10 +12,7 @@ function App() {
     <CartContext.Provider value={{cart, setCart}}>
       <div className="container">
         <Navbar/>
-        <Home 
-          cart={cart}
-          setCart={setCart}
-        />
+        <Home/>
       </div>
     </CartContext.Provider>
   );
