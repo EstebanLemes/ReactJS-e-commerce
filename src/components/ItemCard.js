@@ -17,8 +17,8 @@ const ItemCard = (props) => {
 
     return(
         <>
-            <div className="card" style={{width: 270}}>
-                <a onClick={(e) => e.preventDefault()} onMouseLeave={show} onMouseMove={hidde} class="item" href="">
+            <div className="card" style={{width: 250}}>
+                <a onClick={(e) => e.preventDefault()} onMouseLeave={show} onMouseMove={hidde} className="item" href="">
                     <img className="card-img-top" src={props.image} alt="Cards"/>
                     <div className={"card-body", hiddeDesc}>
                         <i onClick={cartUpdate} className="cart-in-item fas fa-cart-plus"/>

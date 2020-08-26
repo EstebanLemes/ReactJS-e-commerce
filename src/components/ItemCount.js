@@ -23,8 +23,8 @@ function ItemCount(props){
     return(
         <>
             <button onClick={onAdd} className="btn btn-primary">+</button>
-            <button onClick={onRest} className="btn btn-primary">-</button>
             <span>{count}</span>
+            <button onClick={onRest} className="btn btn-primary">-</button>
         </>
     );
 }

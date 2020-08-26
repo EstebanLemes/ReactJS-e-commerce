@@ -2,32 +2,25 @@ import React from 'react';
 
 import Slider from './Slider';
 import ItemCard from './ItemCard';
+import Footer from './Footer';
 import {Mother, Impresora, Notebook, PCGamer} from '../constants/products';
-import ItemCount from './ItemCount';
 
 const Home = (props) => {
 
     return(
         <div>
             <Slider />
-            {/* <div class="row">
+            <div className="row justify-content-center">
                 <ItemCard image={Mother} />
                 <ItemCard image={Impresora} />
                 <ItemCard image={Notebook} />
                 <ItemCard image={PCGamer} />
-
                 <ItemCard image={Mother} />
                 <ItemCard image={Impresora} />
                 <ItemCard image={Notebook} />
                 <ItemCard image={PCGamer} />
-                
-            </div> */}
-            <ItemCount 
-                initial={5}
-                min={0}
-                max={50}
-            />
-
+            </div>
+            <Footer/>
         </div>
     );
 }

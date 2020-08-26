@@ -24,6 +24,7 @@ code {
 .card{
   margin-top: 30px;
   margin-right: 15px;
+  margin-left: 20px;
 }
 
 .card > a{
@@ -63,4 +64,18 @@ code {
 
 .cart-in-item:hover{
   background-color: lime;
+}
+
+.card-img-top{
+  height: 200px;
+}
+
+.footer{
+  height: 50px;
+  line-height: 50px;
+}
+
+.menu-center{
+  position: absolute;
+  margin-left: -150px;
 }
