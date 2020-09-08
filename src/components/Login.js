@@ -7,22 +7,39 @@ function Login(){
                 <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Login
                 </a>
-                <form className="dropdown-menu dropdown-menu-right p-4">
-                    <div className="form-group">
-                        <label htmlFor="exampleDropdownFormEmail2">Usuario</label>
-                        <input type="email" className="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com"/>
+                <form className="dropdown-menu dropdown-menu-right loginXl text-center border border-dark p-4" action="#!">
+
+                    <p className="h4 mb-4">Login</p>
+
+                    <input type="email" id="defaultLoginFormEmail" className="form-control mb-4" placeholder="E-mail"/>
+
+                    <input type="password" id="defaultLoginFormPassword" className="form-control mb-4" placeholder="Contraseña"/>
+
+                    <div className="d-flex justify-content-around">
+                        <div>
+                            <div className="custom-control custom-checkbox">
+                                <input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember"/>
+                                <label className="custom-control-label" for="defaultLoginFormRemember">Recuerdame</label>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="">Olvido su contraseña?</a>
+                        </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleDropdownFormPassword2">Contraseña</label>
-                        <input type="password" className="form-control" id="exampleDropdownFormPassword2" placeholder="Contraseña"/>
-                    </div>
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="dropdownCheck2"/>
-                        <label className="form-check-label" htmlFor="dropdownCheck2">
-                        Recuerdame
-                        </label>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Sign in</button>
+
+                    <button className="btn btn-info btn-block my-4" type="submit">Loguearse</button>
+
+                    <p>No es miembro?
+                        <a href="">Register</a>
+                    </p>
+
+                    <p>o loguearse con:</p>
+
+                    <a href="#" className="mx-2" role="button"><i className="fab fa-facebook-f light-blue-text"></i></a>
+                    <a href="#" className="mx-2" role="button"><i className="fab fa-twitter light-blue-text"></i></a>
+                    <a href="#" className="mx-2" role="button"><i className="fab fa-linkedin-in light-blue-text"></i></a>
+                    <a href="#" className="mx-2" role="button"><i className="fab fa-github light-blue-text"></i></a>
+
                 </form>
             </li>
         </ul>

@@ -1,7 +1,7 @@
 import React, {useState, useContext} from 'react';
 import CartContext from '../contexts/cartContext';
 
-const ItemCard = (props) => {
+const Item = (props) => {
 
     const {cart, setCart} = useContext(CartContext);
 
@@ -17,19 +17,21 @@ const ItemCard = (props) => {
 
     return(
         <>
-            <div className="card" style={{width: 250}}>
-                <a onClick={(e) => e.preventDefault()} onMouseLeave={show} onMouseMove={hidde} className="item" href="">
-                    <img className="card-img-top" src={props.image} alt="Cards"/>
+        {
+            props.data.map(item => 
+                <div className="card" style={{width: 250}}>
+                    <img className="card-img-top" src={item.image} alt="Cards"/>
                     <div className={"card-body", hiddeDesc}>
                         <i onClick={cartUpdate} className="cart-in-item fas fa-cart-plus"/>
                     </div>
                     <div className="card-body">
-                    <p className="card-text p-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p className="card-text p-2">{item.description}</p>
                     </div>
-                </a>
-            </div>
+                </div>
+            )
+        }
         </>
     );
 }
 
-export default ItemCard;
+export default Item;
