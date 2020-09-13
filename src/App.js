@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import Navbar from './components/NavBar';
-import Home from './components/Home';
-import ItemCount from './components/ItemCount';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Navbar from './components/Navbar/NavBar';
+import Home from './pages/Home/Home';
+import ItemCount from './components/Items/ItemCount/ItemCount';
 import CartContext from './contexts/cartContext';
-import CreatePost from './components/CreatePost';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -13,13 +14,18 @@ function App() {
   return (
     <CartContext.Provider value={{cart, setCart}}>
       <div className="container">
-        <Navbar/>
-        <Home />
-         <ItemCount
-          initial={0}
-          max={10}
-          min={0}
-        />
+        <BrowserRouter>
+          <Navbar/>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path="/count">
+              <ItemCount />
+            </Route>
+          </Switch>
+          <Footer/>
+        </BrowserRouter>
         {/* <CreatePost /> */}
       </div>
     </CartContext.Provider>

@@ -5,11 +5,11 @@ function Login(){
         <ul className="navbar-nav mr-auto p-2">
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Login
+                    Iniciar Sesión
                 </a>
                 <form className="dropdown-menu dropdown-menu-right loginXl text-center border border-dark p-4" action="#!">
 
-                    <p className="h4 mb-4">Login</p>
+                    <p className="h4 mb-4">Iniciar Sesión</p>
 
                     <input type="email" id="defaultLoginFormEmail" className="form-control mb-4" placeholder="E-mail"/>
 
@@ -19,7 +19,7 @@ function Login(){
                         <div>
                             <div className="custom-control custom-checkbox">
                                 <input type="checkbox" className="custom-control-input" id="defaultLoginFormRemember"/>
-                                <label className="custom-control-label" for="defaultLoginFormRemember">Recuerdame</label>
+                                <label className="custom-control-label" htmlFor="defaultLoginFormRemember">Recuerdame</label>
                             </div>
                         </div>
                         <div>
@@ -30,7 +30,7 @@ function Login(){
                     <button className="btn btn-info btn-block my-4" type="submit">Loguearse</button>
 
                     <p>No es miembro?
-                        <a href="">Register</a>
+                        <a href="">Registrarse</a>
                     </p>
 
                     <p>o loguearse con:</p>

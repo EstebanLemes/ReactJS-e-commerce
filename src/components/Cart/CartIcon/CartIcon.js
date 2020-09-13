@@ -1,5 +1,5 @@
 import React, {useState, useContext} from 'react';
-import CartContext from '../contexts/cartContext';
+import CartContext from '../../../contexts/cartContext';
 
 const LogoIcon = () => {
 

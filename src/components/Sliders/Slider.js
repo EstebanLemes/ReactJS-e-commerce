@@ -1,5 +1,6 @@
 import React from 'react';
-import {Mother, PCGamer, Impresora, Notebook} from '../constants/products';
+import {TangoGestion, PCGamer, Sistemas, Windows, SoftwareAMedida, Ipad} from '../../constants/products';
+require('./styles.css');
 
 const Slider = () => {
     return(
@@ -9,19 +10,26 @@ const Slider = () => {
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
             </ol>
-            <div className="carousel-inner text-center regular-h">
+            <div className="carousel-inner text-center personal-h">
                 <div className="carousel-item active">
-                    <img className="w-25" src={Notebook} alt="Notebooks"/>
+                    <img className="w-70" src={PCGamer} alt="Software a medida"/>
                 </div>
                 <div className="carousel-item">
-                    <img className="w-25" src={PCGamer} alt="PCGamer"/>
+                    <img className="w-70" src={Ipad} alt="Ipads"/>
                 </div>
                 <div className="carousel-item">
-                    <img className="w-25" src={Impresora} alt="Impresora"/>
+                    <img className="w-70" src={Sistemas} alt="Sistemas Operativos"/>
                 </div>
                 <div className="carousel-item">
-                    <img className="w-25" src={Mother} alt="Motherboard"/>
+                    <img className="w-70" src={Windows} alt="Windows"/>
+                </div>
+                <div className="carousel-item">
+                    <img className="w-70" src={SoftwareAMedida} alt="Software a medida"/>
+                </div>
+                <div className="carousel-item">
+                    <img className="w-70" src={TangoGestion} alt="Tango Gestion"/>
                 </div>
             </div>
             <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

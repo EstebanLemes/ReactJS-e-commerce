@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Icono from '../assets/images/icono.png';
+import Icono from '../../assets/images/logo.png';
 
 function CartIcon(){
     return(

@@ -1,4 +1,6 @@
-export const Mother = '/images/motherboard.jpg';
-export const Impresora = '/images/impresora.jpg';
-export const Notebook = '/images/notebook.jpg';
+export const Sistemas = '/images/sistemasop.png';
+export const Windows = '/images/windows.jpg';
+export const TangoGestion = '/images/tangogest.png';
 export const PCGamer = '/images/pcgamer.jpg';
+export const SoftwareAMedida = '/images/software_a_medida.jpeg';
+export const Ipad = '/images/ipad.jpg';
