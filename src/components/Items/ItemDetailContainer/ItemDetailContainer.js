@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {PCGamer} from '../../../constants/products';
+require('./styles.css');
 
 export default function ItemDetailContainer() {
 
@@ -26,12 +27,12 @@ export default function ItemDetailContainer() {
     }, [item])
 
     if(loading){
-        return <div>Loading...</div>
+        return <div className="mt-10">Loading...</div>
     }
     
     return (
-        <div>
-            {item ? <ItemDetail image={PCGamer} data={item}/> : <ItemDetail>Loading...</ItemDetail>}
+        <div className="mt-10">
+            <ItemDetail image={PCGamer} data={item}/>
         </div>
     )
 }

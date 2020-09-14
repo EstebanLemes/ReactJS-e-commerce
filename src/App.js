@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar/NavBar';
 import Home from './pages/Home/Home';
-import ItemCount from './components/Items/ItemCount/ItemCount';
+import Cart from './components/Cart/Cart';
 import CartContext from './contexts/cartContext';
 import Footer from './components/Footer/Footer';
+import ItemDetailContainer from './components/Items/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -20,8 +21,11 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route path="/count">
-              <ItemCount />
+            <Route path="/item/:id">
+              <ItemDetailContainer />
+            </Route>
+            <Route path="/cart">
+              <Cart />
             </Route>
           </Switch>
           <Footer/>
