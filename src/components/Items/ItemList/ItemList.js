@@ -1,35 +1,32 @@
 import React, {useState, useEffect} from 'react'
 import Item from '../Item/Item';
-import {TangoGestion, PCGamer, Sistemas, Windows, SoftwareAMedida} from '../../../constants/products';
 
 export default function ItemList() {
 
     const [List, setList] = useState([]);
-    const [loading, setLoading] = useState('true');
-    const [data, setData] = useState([]);
-
-    const task = new Promise((res, rej) => {
+    const [loading, setLoading] = useState(false);
+    
+    useEffect(() => {
+        setLoading(true);
         setTimeout(() => {
-            const data = [
-                {id: 1, image: `${TangoGestion}`, description: 'Motherboard Gigabyte Aorus Z390'},
-                {id: 2, image: `${PCGamer}`, description: 'Impresoras de cartucho'},
-                {id: 3, image: `${Sistemas}`, description: 'Notebooks a pedido'},
-                {id: 5, image: `${SoftwareAMedida}`, description: 'CPUs armadas a medida del cliente'}
+            fetch('https://e-commerce-sss.herokuapp.com/api/products')
+            .then(response =>{
+                return response.json();
+            })
+            .then(res => {
+                setList(res);
+                setLoading(false);
+            })
+        }, 3000)
+    }, [])
 
-            ]
-            res(data)
-        }, 2000)
-    });
-
-    task.then((result) => {
-        setList(result)
-    }, (err) => {
-        console.log('Rejected: '+ err);
-      });
+    if(loading){
+        return <div className="mt-10">Loading...</div>
+    }
 
     return (
         <>
-            {List != '' ? <div  className="row justify-content-center"><Item data={List}/></div> : <h1>Loading...</h1>}
+            {List !== '' ? <div  className="row justify-content-center"><Item key={List._id} data={List}/></div> : <h1>Loading...</h1>}
         </>
     )
 }

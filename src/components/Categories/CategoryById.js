@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import Item from '../Items/Item/Item';
 import {useParams} from 'react-router-dom';
 import './styles.css';
 
-export default function ItemDetailContainer() {
+export default function CategoryById() {
 
     const params = useParams();
 
-    const [item, setItem] = useState([]);
+    const [List, setList] = useState([]);
     const [loading, setLoading] = useState(false);
     
     useEffect(() => {
         setLoading(true);
         setTimeout(() => {
-            fetch(`https://e-commerce-sss.herokuapp.com/api/products/${params.id}`)
+            fetch(`https://e-commerce-sss.herokuapp.com/api/categories/${params.id}`)
             .then(response =>{
                 return response.json();
             })
             .then(res => {
-                setItem(res);
+                setList(res);
                 setLoading(false);
             })
         }, 3000)
@@ -27,10 +27,12 @@ export default function ItemDetailContainer() {
     if(loading){
         return <div className="mt-10">Loading...</div>
     }
-    
+
+    const { products } = List;
+
     return (
         <div className="mt-10">
-            <ItemDetail data={item}/>
+            {List != '' ? <div  className="row justify-content-center"><Item data={products}/></div> : <h1>Loading...</h1>}
         </div>
     )
 }

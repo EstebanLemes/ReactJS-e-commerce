@@ -1,23 +1,29 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import CartContext from '../../../contexts/cartContext';
 
 export default function ItemDetail(props) {
 
+    const {cant} = useContext(CartContext);
+
     //Desconstructor de la prop
-    const {title, description} = props.data;
+    const {name, imgURL, price} = props.data;
+
+    const {amount, currency_id} = price ?? {price: []}
 
     return (
         <div className="row mb-4">
             <div className="col-8">
-                <img className="card-img-top h-100" src={props.image} alt="Card image cap"/>
+                <img className="card-img-top h-100" src={imgURL} alt="Ilustrative card"/>
             </div>
             <div className="col-4 border-top border-right border-bottom">
-                <h1 className="card-title">{title}</h1>
-                <p className="card-text">{description}</p>
+                <h1 className="card-title">{name}</h1>
+                <p className="card-text">{name}</p>
+                <p className="card-text">$ {amount} ({currency_id})</p>
                 <ItemCount initial={1} max={10} min={0} />
-                <NavLink className="btn btn-info" to={`/cart`}>Comprar ahora</NavLink>
-                <a href="#" className="btn btn-primary">Agregar al carrito</a>
+                <NavLink className="btn btn-info" to={`/cart`}>Comprar {cant} ahora</NavLink>
+                <NavLink className="btn btn-primary" to={""}>Agregar al carrito</NavLink>
             </div>
         </div>
     )

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import CartContext from '../../../contexts/cartContext';
 
 function ItemCount(props){
 
+    const {setCant} = useContext(CartContext);
     const [count, setCount] = useState(props.initial);
 
     function onAdd(){
@@ -13,13 +15,9 @@ function ItemCount(props){
         return count <= props.min ? null : setCount(count-1);
     }
 
-    const { userId } = useParams();
     useEffect(() => {
-        console.log('Recived userId to: ', userId);
-        return() => {
-            console.log('Will change userId', userId);
-        }
-    }, [userId]);
+        setCant(count)
+    }, [count])
 
     return(
         <>

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import CartContext from '../../../contexts/cartContext';
 import { NavLink } from 'react-router-dom';
 

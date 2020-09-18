@@ -1,6 +1,6 @@
 import React from 'react';
 import {TangoGestion, PCGamer, Sistemas, Windows, SoftwareAMedida, Ipad} from '../../constants/products';
-require('./styles.css');
+import './styles.css';
 
 const Slider = () => {
     return(

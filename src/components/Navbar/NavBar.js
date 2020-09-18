@@ -1,11 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import CartIcon from '../Cart/CartIcon/CartIcon';
 import LogoIcon from './LogoIcon';
 import Login from '../Login/Login';
 import { NavLink } from 'react-router-dom';
-require('./styles.css');
+import './styles.css';
 
 const Navbar = () => {
+
+    const [category, setCategory] = useState([]);
+    const [loading, setLoading] = useState(false);
+    
+    useEffect(() => {
+        setLoading(true);
+        fetch(`https://e-commerce-sss.herokuapp.com/api/categories`)
+        .then(response =>{
+            return response.json();
+        })
+        .then(res => {
+            setCategory(res);
+            setLoading(false);
+        })
+    }, [])
+    
+    const cate = category.map(cat => 
+        <NavLink className="dropdown-item" key={cat._id} to={`/category/${cat._id}`}>{cat.name}</NavLink>
+        )
+
+    if(loading){
+        return <div className="mt-10">Loading...</div>
+    }
+
     return(
         <div>
             <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-personalized">
@@ -23,10 +47,7 @@ const Navbar = () => {
                                 Categorias
                             </NavLink>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <NavLink className="dropdown-item" to="/category/1">Software a medida</NavLink>
-                                <NavLink className="dropdown-item" to="/category/2">Sistemas Operativos</NavLink>
-                                <NavLink className="dropdown-item" to="/category/3">PC Armadas</NavLink>
-                                <NavLink className="dropdown-item" to="/category/4">Componentes de PC</NavLink>
+                                {cate}
                             </div>
                         </li>
                         <li className="nav-item">
