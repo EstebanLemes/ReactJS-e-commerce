@@ -8,16 +8,14 @@ export default function ItemList() {
     
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
-            fetch('https://e-commerce-sss.herokuapp.com/api/products')
-            .then(response =>{
-                return response.json();
-            })
-            .then(res => {
-                setList(res);
-                setLoading(false);
-            })
-        }, 3000)
+        fetch('https://e-commerce-sss.herokuapp.com/api/products')
+        .then(response =>{
+            return response.json();
+        })
+        .then(res => {
+            setList(res);
+            setLoading(false);
+        })
     }, [])
 
     if(loading){

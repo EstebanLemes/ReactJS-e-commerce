@@ -12,16 +12,14 @@ export default function ItemDetailContainer() {
     
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
-            fetch(`https://e-commerce-sss.herokuapp.com/api/products/${params.id}`)
-            .then(response =>{
-                return response.json();
-            })
-            .then(res => {
-                setItem(res);
-                setLoading(false);
-            })
-        }, 3000)
+        fetch(`https://e-commerce-sss.herokuapp.com/api/products/${params.id}`)
+        .then(response =>{
+            return response.json();
+        })
+        .then(res => {
+            setItem(res);
+            setLoading(false);
+        })
     }, [params.id])
 
     if(loading){

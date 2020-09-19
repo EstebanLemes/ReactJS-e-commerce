@@ -7,7 +7,7 @@ function ItemCount(props){
     const {setCant} = useContext(CartContext);
     const [count, setCount] = useState(props.initial);
 
-    function onAdd(){
+    function onAdd(e){
         return count >= props.max ? null : setCount(count+1);
     }
 
@@ -21,10 +21,14 @@ function ItemCount(props){
 
     return(
         <>
-        <div className="input-group">
-                <button onClick={onRest} className="btn btn-primary input-group-prepend">-</button>
-                <span className="form-control">{count}</span>
-                <button onClick={onAdd} className="btn btn-primary input-group-apend">+</button>
+            <div className="input-group">
+                <div className="input-group-prepend">
+                    <button onClick={onRest} className="btn btn-primary input-group-prepend">-</button>
+                </div>
+                <span className="form-control text-center">{count}</span>
+                <div className="input-group-append">
+                    <button onClick={onAdd} className="btn btn-primary input-group-apend">+</button>
+                </div>
             </div>
         </>
     );

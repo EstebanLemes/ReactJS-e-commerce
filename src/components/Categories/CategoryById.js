@@ -12,16 +12,14 @@ export default function CategoryById() {
     
     useEffect(() => {
         setLoading(true);
-        setTimeout(() => {
-            fetch(`https://e-commerce-sss.herokuapp.com/api/categories/${params.id}`)
-            .then(response =>{
-                return response.json();
-            })
-            .then(res => {
-                setList(res);
-                setLoading(false);
-            })
-        }, 3000)
+        fetch(`https://e-commerce-sss.herokuapp.com/api/categories/${params.id}`)
+        .then(response =>{
+            return response.json();
+        })
+        .then(res => {
+            setList(res);
+            setLoading(false);
+        })
     }, [params.id])
 
     if(loading){

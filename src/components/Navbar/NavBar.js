@@ -21,14 +21,10 @@ const Navbar = () => {
             setLoading(false);
         })
     }, [])
-    
-    const cate = category.map(cat => 
-        <NavLink className="dropdown-item" key={cat._id} to={`/category/${cat._id}`}>{cat.name}</NavLink>
-        )
 
-    if(loading){
-        return <div className="mt-10">Loading...</div>
-    }
+    let cate = ''
+    
+    loading ? cate = <div className="mt-10">Loading...</div> : cate = category.map(cat => <NavLink className="dropdown-item" key={cat._id} to={`/category/${cat._id}`}>{cat.name}</NavLink>)
 
     return(
         <div>

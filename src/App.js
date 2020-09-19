@@ -13,9 +13,10 @@ function App() {
 
   const [cart, setCart] = useState(0);
   const [cant, setCant] = useState(0);
+  const [item, setItem] = useState([]);
 
   return (
-    <CartContext.Provider value={{cart, setCart} && {cant, setCant}}>
+    <CartContext.Provider value={{cart, setCart, cant, setCant, item, setItem}}>
       <div className="container">
         <BrowserRouter>
           <Navbar/>
