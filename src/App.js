@@ -4,19 +4,15 @@ import Navbar from './components/Navbar/NavBar';
 import CategoryById from './components/Categories/CategoryById';
 import Home from './pages/Home/Home';
 import Cart from './components/Cart/Cart';
-import CartContext from './contexts/cartContext';
+import {CartProvider} from './contexts/cartContext';
 import Footer from './components/Footer/Footer';
 import ItemDetailContainer from './components/Items/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
 
-  const [cart, setCart] = useState(0);
-  const [cant, setCant] = useState(0);
-  const [item, setItem] = useState([]);
-
   return (
-    <CartContext.Provider value={{cart, setCart, cant, setCant, item, setItem}}>
+    <CartProvider>
       <div className="container">
         <BrowserRouter>
           <Navbar/>
@@ -38,7 +34,7 @@ function App() {
         </BrowserRouter>
         {/* <CreatePost /> */}
       </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 

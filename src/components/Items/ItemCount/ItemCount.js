@@ -1,23 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import CartContext from '../../../contexts/cartContext';
+import {CartContext} from '../../../contexts/cartContext';
 
 function ItemCount(props){
 
-    const {setCant} = useContext(CartContext);
-    const [count, setCount] = useState(props.initial);
+    const {setCount, count, min, max} = props;
+
+    const [setCant] = useContext(CartContext);
 
     function onAdd(e){
-        return count >= props.max ? null : setCount(count+1);
+        return count >= max ? null : setCount(count+1);
     }
 
     function onRest(){
-        return count <= props.min ? null : setCount(count-1);
+        return count <= min ? null : setCount(count-1);
     }
-
-    useEffect(() => {
-        setCant(count)
-    }, [count])
 
     return(
         <>
