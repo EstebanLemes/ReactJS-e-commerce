@@ -5,18 +5,18 @@ import {CartContext} from '../../../contexts/cartContext';
 
 export default function ItemDetail(props) {
 
-    const [setCart] = useContext(CartContext);
+    const [cart, setCart] = useContext(CartContext);
 
     //Desconstructor de la prop
-    const {name, imgURL, price} = props.data;
+    const {_id, name, imgURL, price} = props.data;
 
     const {amount, currency_id} = price ?? {price: []}
 
     const [count, setCount] = useState(1);
 
     const addToCart = () => {
-        const items = props.data;
-        setCart(current => [current, {item: items}])
+        const items = {name, imgURL, price, count, _id};
+        setCart(currentCart => [...currentCart, items])
     }
 
     return (

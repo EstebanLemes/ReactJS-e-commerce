@@ -30,7 +30,7 @@ export default function CategoryById() {
 
     return (
         <div className="mt-10">
-            {List != '' ? <div  className="row justify-content-center"><Item data={products}/></div> : <h1>Loading...</h1>}
+            {List !== '' ? <div  className="row justify-content-center"><Item data={products}/></div> : <h1>Loading...</h1>}
         </div>
     )
 }

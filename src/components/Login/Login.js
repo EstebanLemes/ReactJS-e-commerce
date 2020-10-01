@@ -1,6 +1,12 @@
 import React from 'react';
 
-function Login(){
+function Login(props){
+
+    const loggin = (e) => {
+        e.preventDefault();
+        props.setUser('Logueado')
+        
+    }
 
     return(
         <ul className="navbar-nav mr-auto p-2">
@@ -28,7 +34,7 @@ function Login(){
                         </div>
                     </div>
 
-                    <button className="btn btn-info btn-block my-4" type="submit">Loguearse</button>
+                    <button className="btn btn-info btn-block my-4" onClick={loggin} type="submit">Loguearse</button>
 
                     <p>No es miembro?
                         <a href="">Registrarse</a>

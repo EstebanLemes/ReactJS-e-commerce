@@ -9,6 +9,7 @@ const Navbar = () => {
 
     const [category, setCategory] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [user, setUser] = useState('Guest');
     
     useEffect(() => {
         setLoading(true);
@@ -50,15 +51,15 @@ const Navbar = () => {
                             <NavLink className="nav-link" to="/technical_support">Soporte Técnico</NavLink>
                         </li>
                     </ul>
-                    <form className="form-inline my-2 my-lg-0">
+                    <form className="form-inline text-right my-lg-0">
                         <div className="input-group">
                             <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
                             <div className="input-group-append">
                                 <button className="btn btn-outline-success" type="submit"><i className="fas fa-search"/></button>
                             </div>
                         </div>
-                        <Login/>
                     </form>
+                    {user === "Guest" ? <Login setUser={setUser}/> : "Logged at " + user}
                     <CartIcon/>
                 </div>
             </nav>

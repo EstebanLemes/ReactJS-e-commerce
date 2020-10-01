@@ -1,12 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import {CartContext} from '../../../contexts/cartContext';
+import React from 'react';
 
 function ItemCount(props){
 
     const {setCount, count, min, max} = props;
-
-    const [setCant] = useContext(CartContext);
 
     function onAdd(e){
         return count >= max ? null : setCount(count+1);
