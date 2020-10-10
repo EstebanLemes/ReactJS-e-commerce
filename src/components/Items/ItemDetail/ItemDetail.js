@@ -29,8 +29,8 @@ export default function ItemDetail(props) {
                 <p className="card-text">{name}</p>
                 <p className="card-text">$ {amount} ({currency_id})</p>
                 <ItemCount initial={1} max={10} min={0} count={count} setCount={setCount} />
-                <NavLink className="btn btn-block mt-2 btn-info" to={`/cart`}>Comprar {count}</NavLink>
-                <NavLink className="btn btn-block btn-primary" onClick={addToCart} to={`/cart`}>Agregar al carrito</NavLink>
+                <NavLink className="btn btn-block mt-2 btn-primary" onClick={addToCart} to={`/item/${_id}`}>Agregar al carrito</NavLink>
+                <NavLink className="btn btn-block mt-2 btn-info" to={`/cart`}>Cantidad a comprar: {count}</NavLink>
             </div>
         </div>
     )

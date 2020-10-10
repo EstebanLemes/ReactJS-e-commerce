@@ -1,26 +1,41 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
+import {AppContext} from '../../contexts/appContext';
 
 function Login(props){
 
+    const [setToken, token] = useContext(AppContext);
+
     const loggin = (e) => {
         e.preventDefault();
-        props.setUser('Logueado')
         
+        const requestOptions = {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value    
+        })
+        };
+        fetch('https://e-commerce-sss.herokuapp.com/api/auth/signin', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
 
     return(
-        <ul className="navbar-nav mr-auto p-2">
+        <ul className="navbar-nav">
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Iniciar Sesión
                 </a>
-                <form className="dropdown-menu dropdown-menu-right loginXl text-center border border-dark p-4" action="#!">
+                <form id="login" className="dropdown-menu dropdown-menu-right loginXl text-center border border-dark p-4" action="#!">
 
                     <p className="h4 mb-4">Iniciar Sesión</p>
 
-                    <input type="email" id="defaultLoginFormEmail" className="form-control mb-4" placeholder="E-mail"/>
+                    <input type="email" name="email" id="email" className="form-control mb-4" placeholder="E-mail"/>
 
-                    <input type="password" id="defaultLoginFormPassword" className="form-control mb-4" placeholder="Contraseña"/>
+                    <input type="password" name="password" id="password" className="form-control mb-4" placeholder="Contraseña"/>
 
                     <div className="d-flex justify-content-around">
                         <div>

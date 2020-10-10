@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Item from '../Item/Item';
+import Loading from '../../Loading/Loading';
 
 export default function ItemList() {
 
@@ -19,12 +20,12 @@ export default function ItemList() {
     }, [])
 
     if(loading){
-        return <div className="mt-10">Loading...</div>
+        return <Loading/>
     }
 
     return (
         <>
-            {List !== '' ? <div  className="row justify-content-center"><Item key={List._id} data={List}/></div> : <h1>Loading...</h1>}
+            {List !== '' ? <div  className="row justify-content-center"><Item key={List._id} data={List}/></div> : <Loading/>}
         </>
     )
 }
