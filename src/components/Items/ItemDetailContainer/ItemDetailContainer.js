@@ -6,14 +6,37 @@ import './styles.css';
 
 export default function ItemDetailContainer() {
 
-    const params = useParams();
-
+    const {id} = useParams();
     const [item, setItem] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [product, setProduct] = useState({});
+
+    useEffect(() => {
+        setLoading(true);
+        const db = getFirestore();
+        const itemCollection = db.collection('items');
+        const item = itemCollection.doc(id);
+
+        item.get()
+        .then((doc) => {
+            if(!doc.exists){
+                console.log("Item does not exist!");
+                return true;
+            }
+            console.log('Item found!');
+            setProduct({id: doc.id, ...doc.data()});
+        })
+        .catch((error) => {
+            console.log('Error searching item: ', error);
+        })
+        .finally(() => {
+            setLoading(false);
+        })
+    }, [id]);
     
     useEffect(() => {
         setLoading(true);
-        fetch(`https://e-commerce-sss.herokuapp.com/api/products/${params.id}`)
+        fetch(`https://e-commerce-sss.herokuapp.com/api/products/${id}`)
         .then(response =>{
             return response.json();
         })
@@ -21,15 +44,25 @@ export default function ItemDetailContainer() {
             setItem(res);
             setLoading(false);
         })
-    }, [params.id])
+    }, [id])
 
     if(loading){
         return <div className="mt-10">Loading...</div>
     }
+
+    const itemToView = () => {
+        let send = {};
+        item.message === "The product doesnt exists" ? (send = product) : (send = item)
+
+        console.log(send)
+
+        return send;
+    }
     
     return (
         <div className="mt-10">
-            <ItemDetail data={item}/>
+            
+            <ItemDetail data={itemToView()}/>
         </div>
     )
 }
