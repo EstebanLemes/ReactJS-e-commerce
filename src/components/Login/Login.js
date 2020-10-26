@@ -1,9 +1,11 @@
-import React, {useContext, useEffect} from 'react';
+import { data } from 'jquery';
+import React, {useContext, useEffect, useState} from 'react';
 import {AppContext} from '../../contexts/appContext';
 
 function Login(props){
 
     const [setToken, token] = useContext(AppContext);
+    const [logged, setLogged] = useState();
 
     const loggin = (e) => {
         e.preventDefault();
@@ -20,7 +22,22 @@ function Login(props){
         };
         fetch('https://e-commerce-sss.herokuapp.com/api/auth/signin', requestOptions)
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => setLogged(data));
+    }
+
+    const loggout = (e) => {
+        e.preventDefault();
+
+        setLogged(undefined)
+    }
+
+    if(logged!==undefined){
+        return <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <a className="nav-link" role="button">Logged at</a>
+                    </li>
+                    <a className="btn btn-info" onClick={loggout}>Logout</a>
+                </ul>
     }
 
     return(

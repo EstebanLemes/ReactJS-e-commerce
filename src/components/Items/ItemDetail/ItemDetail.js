@@ -8,14 +8,20 @@ export default function ItemDetail(props) {
     const [cart, setCart] = useContext(CartContext);
 
     //Desconstructor de la prop
-    const {_id, name, imgURL, price} = props.data;
+    const {id, _id, name, imgURL, price} = props.data;
 
     const {amount, currency_id} = price ?? {price: []}
+
+    let itemId;
+
+    id === undefined ? (itemId = _id) : (itemId = id);
+
+    console.log(itemId)
 
     const [count, setCount] = useState(1);
 
     const addToCart = () => {
-        const items = {name, imgURL, price, count, _id};
+        const items = {name, imgURL, price, count, itemId};
         setCart(currentCart => [...currentCart, items])
     }
 
@@ -29,7 +35,7 @@ export default function ItemDetail(props) {
                 <p className="card-text">{name}</p>
                 <p className="card-text">$ {amount} ({currency_id})</p>
                 <ItemCount initial={1} max={10} min={0} count={count} setCount={setCount} />
-                <NavLink className="btn btn-block mt-2 btn-primary" onClick={addToCart} to={`/item/${_id}`}>Agregar al carrito</NavLink>
+                <NavLink className="btn btn-block mt-2 btn-primary" onClick={addToCart} to={`/item/${itemId}`}>Agregar al carrito</NavLink>
                 <NavLink className="btn btn-block mt-2 btn-info" to={`/cart`}>Cantidad a comprar: {count}</NavLink>
             </div>
         </div>
