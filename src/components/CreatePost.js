@@ -2,7 +2,7 @@ import React from 'react'
 
 async function postData(){
     try {
-        let result = await fetch('https://book-container.herokuapp.com/api/e-commerce', {
+        let result = await fetch(`${process.env.REACT_APP_API_URL}/e-commerce`, {
            method: 'post',
            headers: {
                'Accept': '*/*',
@@ -28,7 +28,6 @@ async function postData(){
 function CreatePost() {
     return (
         <>
-            
             <button className="btn btn-success" onClick={postData}>Publicar</button>
         </>
     )

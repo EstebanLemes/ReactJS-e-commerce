@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import Item from '../Item/Item';
 import Loading from '../../Loading/Loading';
 
+require('dotenv').config()
+
 export default function ItemList() {
 
     const [List, setList] = useState([]);
@@ -9,7 +11,7 @@ export default function ItemList() {
     
     useEffect(() => {
         setLoading(true);
-        fetch('https://e-commerce-sss.herokuapp.com/api/products')
+        fetch(`${process.env.REACT_APP_API_URL}/products`)
         .then(response =>{
             return response.json();
         })

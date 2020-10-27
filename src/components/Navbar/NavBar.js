@@ -13,7 +13,7 @@ const Navbar = () => {
     
     useEffect(() => {
         setLoading(true);
-        fetch(`https://e-commerce-sss.herokuapp.com/api/categories`)
+        fetch(`${process.env.REACT_APP_API_URL}/categories`)
         .then(response =>{
             return response.json();
         })

@@ -23,7 +23,6 @@ export default function ItemDetailContainer() {
                 console.log("Item does not exist!");
                 return true;
             }
-            console.log('Item found!');
             setProduct({id: doc.id, ...doc.data()});
         })
         .catch((error) => {
@@ -36,7 +35,7 @@ export default function ItemDetailContainer() {
     
     useEffect(() => {
         setLoading(true);
-        fetch(`https://e-commerce-sss.herokuapp.com/api/products/${id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/products/${id}`)
         .then(response =>{
             return response.json();
         })
@@ -53,8 +52,6 @@ export default function ItemDetailContainer() {
     const itemToView = () => {
         let send = {};
         item.message === "The product doesnt exists" ? (send = product) : (send = item)
-
-        console.log(send)
 
         return send;
     }

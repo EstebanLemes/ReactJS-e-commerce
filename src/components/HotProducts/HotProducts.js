@@ -33,8 +33,6 @@ export default function HotProducts() {
         return <Loading/>
     }
 
-    console.log(items)
-
     return (
         <>
             {items !== '' ? <div  className="row justify-content-center"><Item key={items.id} data={items}/></div> : <Loading/>}

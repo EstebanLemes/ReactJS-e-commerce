@@ -8,16 +8,18 @@ export default function Cart() {
   const [cart] = useContext(CartContext);
   const [showPre, setShowPre] = useState(false);
   const [total, setTotal] = useState();
+  const [items, setItems] = useState();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     let newTotal = 0;
     let product = [];
-      cart.map((item)=>{
-        newTotal = newTotal + (item.price.amount * item.count)
-        product.push(item.itemId)
+    cart.map((item)=>{
+        newTotal = newTotal + (item.price.amount * item.count);
+        product.push(item.itemId);
       })
       setProducts(product)
+      setItems(cart)
       setTotal(newTotal)
   },[]);
 
@@ -79,7 +81,7 @@ export default function Cart() {
           ""
         )}
       </div>
-      {showPre === true ? <PrePurchase products={products} total={total} /> : ""}
+      {showPre === true ? <PrePurchase products={products} items={items} total={total} /> : ""}
     </div>
   );
 }

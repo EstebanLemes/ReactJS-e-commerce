@@ -13,6 +13,7 @@ const Home = (props) => {
       <ToastContainer />
       <Slider />
       <>
+        <h1 className="text-center">Productos destacados</h1>
         <HotProducts
           position="top-right"
           autoClose={false}
@@ -22,6 +23,8 @@ const Home = (props) => {
           pauseOnFocusLoss
           draggable
         />
+        <hr />
+        <h2 className="text-center">Todos los productos</h2>
         <ItemList />
       </>
     </div>

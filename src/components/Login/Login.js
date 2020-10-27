@@ -20,7 +20,7 @@ function Login(props){
                 password: document.getElementById('password').value    
         })
         };
-        fetch('https://e-commerce-sss.herokuapp.com/api/auth/signin', requestOptions)
+        fetch(`${process.env.REACT_APP_API_URL}/auth/signin`, requestOptions)
             .then(response => response.json())
             .then(data => setLogged(data));
     }

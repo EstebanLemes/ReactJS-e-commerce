@@ -12,7 +12,7 @@ export default function CategoryById() {
     
     useEffect(() => {
         setLoading(true);
-        fetch(`https://e-commerce-sss.herokuapp.com/api/categories/${params.id}`)
+        fetch(`${process.env.REACT_APP_API_URL}/categories/${params.id}`)
         .then(response =>{
             return response.json();
         })
