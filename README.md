@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## CoderHouse E-Commerce ##
 
 **E Commerce SSS** es una aplicación creada durante el curso de CoderHouse.
@@ -94,4 +93,3 @@ La publicacion de productos aun no esta disponible, se encuentra en fase de desa
 Se agregaron las librerias:
 - Bootstrap, JQuery y popper.js para el aspecto visual de la aplicacion.
 - Toastify para una implementacion de notificaciones al usuario.
->>>>>>> 8a2d2198e50d959d00664e680b4dee77ee6c983e
