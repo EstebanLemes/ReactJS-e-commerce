@@ -34,6 +34,14 @@ Al generar una orden con X cantidad de items los items son restados al stock del
 Se esta trabajando en un login personalizado donde se obtiene un Json Web Token para una verificacion.
 Una vez se este logueado se procedera a mostrar las compras, ventas y publicaciones realizadas por el usuario.
 
+Si bien en este momento se puede realizar el login y nos devuelve el JWT el mismo no es guardado en ninguna variable.
+
 ### Publicacion de nuevos productos ###
 
 La publicacion de productos aun no esta disponible, se encuentra en fase de desarrollo donde se necesitara estar logueado para poder hacer uso del JWT.
+
+### Librerias Extra ###
+
+Se agregaron las librerias:
+- Bootstrap, JQuery y popper.js para el aspecto visual de la aplicacion.
+- Toastify para una implementacion de notificaciones al usuario.
